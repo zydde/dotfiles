@@ -1,0 +1,28 @@
+# fast backend
+backend = "glx";
+
+# screen tearing fix
+vsync = "opengl-swc";
+#vsync = true;
+
+# use shadows
+shadow = true;
+
+# make unfocused windows transparent
+inactive-window-opacity = 1;
+
+# unfocused window opacity
+inactive-opacity = 0.7;
+
+# no shadows on bars, etc
+no-dock-shadow = true;
+
+# use fading
+fading = true;
+
+# fading delta
+fade-delta = 10;
+
+# fading steps, in and out
+fade-in-step = 0.1;
+fade-out-step = 0.1;
