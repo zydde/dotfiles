@@ -10,41 +10,28 @@ font-2 = UbuntuMono Nerd Font:size=26;6
 background = #30000000
 line-size = 2
 height = 35
+separator = "   "
 
 tray-position = right
-tray-background = #283e4f
+tray-background = #505c6c
 
 override-redirect = true
 wm-restack = i3
 
 modules-left = i3 xwindow
 modules-center = date
-modules-right = arrow3 temperature arrow1 pulseaudio arrow2 battery arrow1
+modules-right = temperature pulseaudio battery arrow
 
 scroll-up = #i3.prev
 scroll-down = #i3.next
 
 ######## arrows ########
 
-[module/arrow1]
+[module/arrow]
 type = custom/text
 content = 
 content-font = 3
-content-foreground = #283e4f
-content-background = #3e5f78
-
-[module/arrow2]
-type = custom/text
-content = 
-content-font = 3
-content-foreground = #3e5f78
-content-background = #283e4f
-
-[module/arrow3]
-type = custom/text
-content = 
-content-font = 3
-content-foreground = #3e5f78
+content-foreground = #505c6c
 
 ######## date ########
 
@@ -106,25 +93,21 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging>
 format-full = <ramp-capacity> <label-full>
 
-format-charging-background = #3e5f78
-format-discharging-background = #3e5f78
-format-full-background = #3e5f78
+label-charging = Charging %percentage%%
+label-discharging = Discharging %percentage%%
+label-full = Full %percentage%%
 
-label-charging = "Charging %percentage%% "
-label-discharging = "Discharging %percentage%% "
-label-full = "Full %percentage%% "
+ramp-capacity-0 = "  "
+ramp-capacity-1 = "  "
+ramp-capacity-2 = "  "
+ramp-capacity-3 = "  "
+ramp-capacity-4 = "  "
 
-ramp-capacity-0 = "   "
-ramp-capacity-1 = "   "
-ramp-capacity-2 = "   "
-ramp-capacity-3 = "   "
-ramp-capacity-4 = "   "
-
-animation-charging-0 = "   "
-animation-charging-1 = "   "
-animation-charging-2 = "   "
-animation-charging-3 = "   "
-animation-charging-4 = "   "
+animation-charging-0 = "  "
+animation-charging-1 = "  "
+animation-charging-2 = "  "
+animation-charging-3 = "  "
+animation-charging-4 = "  "
 animation-charging-framerate = 750
 
 bar-capacity-width = 10
@@ -136,15 +119,13 @@ type = internal/pulseaudio
 
 interval = 5
 
-format-volume = "<ramp-volume>  <label-volume> "
-format-volume-background = #283e4f
+format-volume = <ramp-volume>  <label-volume>
 
-label-muted = "%{T2}%{T-} muted "
-label-muted-background = #283e4f
+label-muted = %{T2}%{T-} MUTE
 
-ramp-volume-0 = " "
-ramp-volume-1 = " "
-ramp-volume-2 = " "
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 click-right = pavucontrol
 
@@ -155,7 +136,6 @@ type = internal/temperature
 
 hwmon-path = /sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon5/temp1_input
 
-label = "  %temperature-c%"
+label =  %temperature-c%
 
-format = "<label> "
-format-background = #3e5f78
+warn-temperature = 999999
